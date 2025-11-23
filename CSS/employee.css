@@ -1,0 +1,440 @@
+/* ... (كود :root و body.dark-mode و * و body و container و sidebar و nav-links كما هو في ملفك) ... */
+
+:root {
+    --primary-color: #5d50ff;
+    --primary-hover: #4a3fea;
+    --background-color: #f7f7f7;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --text-light: #777777;
+    --border-color: #e0e0e0;
+    --sidebar-bg: #1c2130;
+    --sidebar-text: #ffffff;
+    --sidebar-active-bg: #272c44;
+    --red: #f86f7f;
+    --green: #48c9b0;
+    --blue: #78B9B5;
+    --yellow: #f4d03f;
+    --transition-speed: 0.3s;
+}
+
+body.dark-mode {
+    --background-color: #1a1a2e; /* خلفية داكنة */
+    --card-background: #24293f; /* خلفية الكروت والجداول */
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --border-color: #333355;
+    --sidebar-bg: #1c2130;
+    --sidebar-text: #ffffff;
+    --sidebar-active-bg: #272c44;
+}
+
+/* ------------------------------------ */
+/* تنسيقات التحكم في القائمة والفرز */
+/* ------------------------------------ */
+
+.employee-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-direction: row-reverse;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.control-select {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    margin-left: 15px;
+    cursor: pointer;
+    appearance: none;
+    text-align: right;
+    background-image: none; /* إزالة أي سهم افتراضي */
+}
+
+body.dark-mode .control-select {
+    background-color: var(--sidebar-active-bg); 
+}
+
+.view-actions {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color var(--transition-speed);
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.view-toggle-btn {
+    background-color: var(--card-background);
+    color: var(--text-light);
+    padding: 10px 12px;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    border: 1px solid var(--border-color);
+}
+
+.view-toggle-btn.active-view {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ------------------------------------ */
+/* تنسيقات الشبكة والبطاقات (Employee Grid) */
+/* ------------------------------------ */
+
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.employee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 20px;
+    position: relative;
+    box-shadow: none; /* جعل البطاقة مسطحة */
+}
+
+.employee-card:hover {
+    transform: none; /* إزالة تأثير التحويل */
+}
+
+.card-header-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.employee-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color); /* إضافة حدود حول الصورة */
+}
+
+.employee-details h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.employee-card .role {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.employee-stats {
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    flex-direction: row-reverse;
+}
+
+.stat-item i {
+    color: var(--primary-color);
+    margin-left: 8px;
+}
+
+.productivity-rate {
+    font-weight: bold;
+    color: var(--primary-color); /* تمييز نسبة الإنتاجية */
+}
+
+.employee-actions {
+    display: flex;
+    gap: 25px;
+}
+
+.employee-actions .action-link {
+    color: var(--text-light); /* اللون الأساسي للرابط */
+    text-decoration: none; /* إزالة التسطير الافتراضي للروابط */
+    transition: color 0.2s;
+}
+
+.employee-actions .action-link:hover {
+    color: var(--primary-color);
+}
+
+.employee-actions .action-link i {
+    font-size: 1.2rem;
+}
+.action-icon {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.action-icon:hover {
+    color: var(--primary-color);
+}
+
+/* ------------------------------------ */
+/* تنسيقات الوضع الداكن للبطاقات */
+/* ------------------------------------ */
+
+body.dark-mode .employee-card {
+    background-color: var(--card-background);
+}
+
+body.dark-mode .control-select,
+body.dark-mode .view-toggle-btn {
+    background-color: var(--sidebar-active-bg); 
+}
+
+/* ------------------------------------ */
+/* تنسيقات الريسبونسف (Responsive) */
+/* ------------------------------------ */
+
+/* للشاشات المتوسطة (الأجهزة اللوحية) */
+@media (max-width: 1200px) {
+    .employee-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* للشاشات الأصغر (الأجهزة اللوحية الصغيرة) */
+@media (max-width: 992px) {
+    .employee-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* للجوالات */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px; 
+        padding: 10px;
+        z-index: 100;
+    }
+    .logo i {
+        margin: 0;
+    }
+    .logo span, .nav-links span, .user-details {
+        display: none; 
+    }
+    .main-content {
+        margin-right: 80px; 
+        margin-left: 0;
+        padding: 15px;
+    }
+    .top-header {
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+    }
+    .page-title-name {
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+    .search-box {
+        order: 3; 
+        width: 100%;
+        margin: 10px 0;
+    }
+    .header-profile {
+        order: 2;
+        width: auto;
+    }
+    .header-profile .user-info {
+        display: none;
+    }
+    .employee-controls {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+    .filters {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .control-select {
+        flex-grow: 1;
+        margin-left: 10px;
+    }
+    .view-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .employee-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ------------------------------------ */
+/* تنسيقات Modal (النافذة المنبثقة) */
+/* ------------------------------------ */
+
+.modal {
+    display: none; /* إخفاء النافذة افتراضياً عند التحميل */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* نعتمد على JS لإضافة display: flex عند النقر */
+    justify-content: center; 
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    color: var(--text-color);
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--card-background);
+}
+
+.close-btn {
+    color: var(--text-light);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    left: 20px; 
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--red);
+    text-decoration: none;
+}
+
+.modal-title {
+    text-align: right;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* تنسيقات النموذج */
+.employee-form .form-group {
+    margin-bottom: 18px;
+    text-align: right;
+}
+
+.employee-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.employee-form input[type="text"],
+.employee-form input[type="email"],
+.employee-form input[type="tel"],
+.employee-form select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.2s;
+    text-align: right;
+}
+
+body.dark-mode .employee-form input[type="text"],
+body.dark-mode .employee-form input[type="email"],
+body.dark-mode .employee-form input[type="tel"],
+body.dark-mode .employee-form select {
+    background-color: var(--sidebar-active-bg);
+    border-color: #333355;
+}
+
+.employee-form input:focus,
+.employee-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* ------------------------------------ */
+/* تنسيق زر الحذف في بطاقة الموظف (New) */
+/* ------------------------------------ */
+
+.delete-employee-btn {
+    right: 15px; /* وضع الزر في الزاوية اليمنى العلوية */
+    left: auto; 
+    color: var(--red); 
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s;
+    opacity: 0.7; 
+    z-index: 10;
+}
+
+.delete-employee-btn i {
+    font-size: 1.2rem;
+}
+
+.delete-employee-btn:hover {
+    opacity: 1;
+    color: var(--red);
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام HR - قائمة الإجازات</title>
+    <link rel="stylesheet" href="CSS/leave.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dark-mode"> 
+    <div class="container">
+       <aside class="sidebar">
+        <div class="logo">
+          <h4>نظام أدارة المعهد</h4>
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
+          ></a>
+          <a href="employee.html" 
+            ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
+          ></a>
+          <a href="moadien.html"><span>الهيئة المعاونة</span><i class="fas fa-user"></i
+          ></a>
+          <a href="management.html"><span>الأداريين</span><i class="fas fa-user-tie"></i></a>
+          <a href="leave.html" class="active"
+            ><span>الإجازات</span><i class="fas fa-door-open"></i
+          ></a>
+          <a href="#"><span>الإعدادات</span><i class="fas fa-cog"></i></a>
+        </nav>
+      </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="page-title-section">
+                    <h1 class="page-title-name">الإجازات</h1>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Search here..." id="search-input">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="user-profile">
+                    <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="top-card leave-stats-grid">
+                <div class="card leave-stat-card">
+                    <div class="icon-box primary-bg"><i class="fas fa-plane"></i></div>
+                    <div class="details">
+                        <span class="count" data-stat-type="total">15</span>
+                        <span class="title">إجمالي الإجازات</span>
+                    </div>
+                </div>
+                <div class="card leave-stat-card">
+                    <div class="icon-box success-bg"><i class="fas fa-check-circle"></i></div>
+                    <div class="details">
+                        <span class="count" data-stat-type="approved">12</span>
+                        <span class="title">الموافق عليها</span>
+                    </div>
+                </div>
+                <div class="card leave-stat-card">
+                    <div class="icon-box danger-bg"><i class="fas fa-times-circle"></i></div>
+                    <div class="details">
+                        <span class="count" data-stat-type="rejected">2</span>
+                        <span class="title">المرفوضة</span>
+                    </div>
+                </div>
+                <div class="card leave-stat-card">
+                    <div class="icon-box warning-bg"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="details">
+                        <span class="count" data-stat-type="pending">5</span>
+                        <span class="title">قيد الانتظار</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class=" leave-list-card card">
+                <div class="card-header-table">
+                    <h2>قائمة الإجازات</h2>
+                    <div class="table-controls">
+                        <select id="leave-type-filter" name="holidays" id="holidays">
+                            <option value="all">كل الإجازات</option>
+                            <option value="Annual">إجازة سنوية</option>
+                            <option value="Casual">إجازة عارضة</option>
+                            <option value="Medical">إجازة مرضية</option>
+                        </select>
+                        <div class="search-table-box">
+                           <input type="text" placeholder="بحث في الجدول..." id="table-search-input">
+                           <i class="fas fa-search"></i>
+                       </div>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="leave-table">
+                        <thead>
+                            <tr >
+                                <th><input type="checkbox" id="select-all"></th>
+                                <th>الموظف</th>
+                                <th>نوع الإجازة</th>
+                                <th>تاريخ البدء</th>
+                                <th>تاريخ الانتهاء</th>
+                                <th>عدد الأيام</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leave-table-body">
+
+                            <tr data-leave-id="1" data-leave-type="Annual">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>أ.م.د أمل شفيق بحيري</strong>
+                                        <small> قسم العلوم الأساسية</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة سنوية</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Annual"></i>
+                                </td>
+                                <td>10-03-2025</td>
+                                <td>19-03-2025</td>
+                                <td>9 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="1"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="1"></i>
+                                </td>
+                            </tr>
+
+                            <tr data-leave-id="2" data-leave-type="Casual">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>.د رفيق صليب وديع</strong>
+                                        <small> قسم الهندسة المدنية</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة عارضة</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Casual"></i>
+                                </td>
+                                <td>10-03-2025</td>
+                                <td>15-03-2025</td>
+                                <td>5 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="2"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="2"></i>
+                                </td>
+                            </tr>
+
+                            <tr data-leave-id="3" data-leave-type="Annual">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>د/أحمد صالح </strong>
+                                        <small>قسم العلوم الأساسية </small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة سنوية</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Annual"></i>
+                                </td>
+                                <td>19-03-2025</td>
+                                <td>22-03-2025</td>
+                                <td>3 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="3"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="3"></i>
+                                </td>
+                            </tr>
+
+
+                            <tr data-leave-id="4" data-leave-type="Annual">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>أ.د أحمد محمد الدسوقي</strong>
+                                        <small> قسم العلوم الأساسية</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة سنوية</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Annual"></i>
+                                </td>
+                                <td>10-03-2025</td>
+                                <td>11-03-2025</td>
+                                <td>1 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="4"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="4"></i>
+                                </td>
+                            </tr>
+
+
+
+                            <tr data-leave-id="5" data-leave-type="Annual">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>د/ مروة أبراهيم</strong>
+                                        <small>قسم الهندسة الكيميائية</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة سنوية</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Annual"></i>
+                                </td>
+                                <td>10-03-2025</td>
+                                <td>15-03-2025</td>
+                                <td>5 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="5"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="5"></i>
+                                </td>
+                            </tr>
+
+                            <tr data-leave-id="6" data-leave-type="Medical">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>م.م كريم حسين ابراهيم</strong>
+                                        <small>قسم العلوم الأساسية</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة سنوية</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Medical"></i>
+                                </td>
+                                <td>10-03-2025</td>
+                                <td>15-03-2025</td>
+                                <td>5 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="6"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="6"></i>
+                                </td>
+                            </tr>
+
+                            <tr data-leave-id="7" data-leave-type="Medical">
+                                <td><input type="checkbox" class="leave-checkbox"></td>
+                                <td class="employee-cell">
+                                    <div class="employee-details">
+                                        <strong data-employee-name>أ.م.د أمل شفيق بحيري</strong>
+                                        <small>  قسم العلوم الأساسية</small>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span data-leave-type-text>إجازة سنوية</span>
+                                    <i class="fas fa-info-circle text-light info-icon" data-type-info="Medical"></i>
+                                </td>
+                                <td>10-03-2025</td>
+                                <td>15-03-2025</td>
+                                <td>5 أيام</td>
+                                <td class="actions">
+                                    <i class="fas fa-pen action-icon edit-icon" data-id="7"></i>
+                                    <i class="fas fa-trash action-icon delete-icon" data-id="7"></i>
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+<!-- delete holiday -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content delete-confirm-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle modal-icon-red"></i> تأكيد الحذف</h3>
+                <span class="close-btn" data-modal="delete-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>هل أنت متأكد من حذف إجازة الموظف: <strong id="delete-employee-name"></strong>؟</p>
+                <small>لا يمكن التراجع عن هذا الإجراء.</small>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-danger" id="confirm-delete-btn" data-leave-id="">حذف</button>
+                <button class="btn-secondary" data-modal="delete-modal">إلغاء</button>
+            </div>
+        </div>
+    </div>
+<!-- edit information of employee -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-pen modal-icon-primary"></i> تعديل بيانات الإجازة</h3>
+                <span class="close-btn" data-modal="edit-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="edit-leave-form">
+                    <input type="hidden" id="edit-leave-id">
+                    
+                    <div class="form-group">
+                        <label for="edit-employee-name">اسم الموظف</label>
+                        <input type="text" id="edit-employee-name" class="form-control" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-leave-type">نوع الإجازة</label>
+                        <select id="edit-leave-type" class="form-control" name="type-of-holiday">
+                            <option value="Annual">إجازة سنوية</option>
+                            <option value="Casual">إجازة عارضة</option>
+                            <option value="Medical">إجازة مرضية</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-start-date">تاريخ البدء</label>
+                        <input type="date" id="edit-start-date" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-end-date">تاريخ الانتهاء</label>
+                        <input type="date" id="edit-end-date" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="save-edit-btn">حفظ التعديلات</button>
+                <button class="btn-secondary" data-modal="edit-modal">إلغاء</button>
+            </div>
+        </div>
+    </div>
+<!-- details about type of holiday -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content delete-confirm-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-info-circle modal-icon-primary"></i> تفاصيل نوع الإجازة: <span id="info-leave-type-name"></span></h3>
+                <span class="close-btn" data-modal="info-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="info-leave-description"></p>
+                <p>الحد الأقصى المسموح به: <strong id="info-max-days"></strong></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-modal="info-modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="JS/main.js"></script> 
+    <script src="JS/leave.js"></script>
+</body>
+</html>

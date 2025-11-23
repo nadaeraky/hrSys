@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام HR - قائمة الموظفين</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/employee.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+    <aside class="sidebar">
+        <div class="logo">
+          <h4>نظام أدارة المعهد</h4>
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
+          ></a>
+          <a href="employee.html" class="active"
+            ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
+          ></a>
+          <a href="moadien.html"><span>الهيئة المعاونة</span><i class="fas fa-user"></i
+          ></a>
+          <a href="management.html"><span>الأداريين</span><i class="fas fa-user-tie"></i></a>
+          <a href="leave.html"
+            ><span>الإجازات</span><i class="fas fa-door-open"></i
+          ></a>
+          <a href="#"><span>الإعدادات</span><i class="fas fa-cog"></i></a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-header">
+          <div class="page-title-section">
+            <h1 class="page-title-name">الموظفين</h1>
+          </div>
+
+          <div class="search-box">
+            <input type="text" placeholder="Search here..." />
+            <i class="fas fa-search"></i>
+          </div>
+
+          <div class="user-profile">
+            <button id="theme-toggle" class="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </header>
+
+        <section class="employees-management">
+          <div class="employee-controls">
+            <div class="filters">
+              <select id="designation-filter" class="control-select">
+                <option value="">القسم</option>
+                <option value="العلوم الأساسية">العلوم الأساسية</option>
+                <option value="الهندسة المدنية">الهندسة المدنية</option>
+                <option value="الهندسة الكيميائية">الهندسة الكيميائية</option>
+                <option value="هندسة الأتصالات و الألكترونيات">
+                  هندسة الأتصالات و الألكترونيات
+                </option>
+              </select>
+            </div>
+
+            <div class="view-actions">
+              <button class="btn btn-primary add-employee-btn">
+                <i class="fas fa-plus"></i> إضافة موظف
+              </button>
+            </div>
+          </div>
+
+          <div class="employee-grid">
+            <div class="card employee-card" data-designation="العلوم الأساسية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.م.د أمل شفيق بحيري (رئيس القسم)</h3>
+                <p class="role">قسم العلوم الأساسية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="هندسة الأتصالات و الألكترونيات"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د/ مروة أبراهيم</h3>
+                <p class="role">قسم هندسة الأتصالات والألكترونيات</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="العلوم الأساسية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.د خالد سمير محمد</h3>
+                <p class="role">قسم العلوم الأساسية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="الهندسة المدنية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>.د رفيق صليب وديع</h3>
+                <p class="role">قسم الهندسة المدنية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="الهندسة الكيميائية"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د.ياسر محمد توفيق علي</h3>
+                <p class="role">قسم الهندسة الكيميائية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="الهندسة المدنية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د. أيمن محمد هلال</h3>
+                <p class="role">قسم الهندسة المدنية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="الهندسة المدنية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د.أيلين عبده الدرس</h3>
+                <p class="role">قسم الهندسة المدنية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="الهندسة الكيميائية"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.م.د.سهير محمد بكر عمر</h3>
+                <p class="role">قسم الهندسة الكيميائية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="العلوم الأساسية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.د أحمد محمد الدسوقي</h3>
+                <p class="role">قسم العلوم الأساسية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="الهندسة المدنية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د.سارة محمد الهادي</h3>
+                <p class="role">قسم الهندسة المدنية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="هندسة الأتصالات و الألكترونيات"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د/ مروة أبراهيم</h3>
+                <p class="role">قسم هندسة الأتصالات والألكترونيات</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="العلوم الأساسية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.م.د سمر محمد مدين خليل</h3>
+                <p class="role">قسم العلوم الأساسية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="الهندسة الكيميائية"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د/ مروة أبراهيم</h3>
+                <p class="role">قسم الهندسة الكيميائية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="العلوم الأساسية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د/ مروة أبراهيم</h3>
+                <p class="role">قسم العلوم الأساسية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="هندسة الأتصالات و الألكترونيات"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>د/ مروة أبراهيم</h3>
+                <p class="role">قسم هندسة الأتصالات والألكترونيات</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="الهندسة الكيميائية"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.د.طه ابراهيم فراج</h3>
+                <p class="role">قسم الهندسة الكيميائية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="card employee-card"
+              data-designation="الهندسة الكيميائية"
+            >
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.م.د.هند السيد جادو</h3>
+                <p class="role">قسم الهندسة الكيميائية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card employee-card" data-designation="الهندسة المدنية">
+              <div
+                class="card-header-icon delete-employee-btn"
+                title="حذف الموظف"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <img
+                src=""
+                alt="Avatar"
+                class="employee-avatar"
+              />
+              <div class="employee-details">
+                <h3>أ.م.د محمد السيد جبر</h3>
+                <p class="role">قسم الهندسة المدنية</p>
+              </div>
+
+              <div class="employee-actions">
+                <a href="mailto:nadaeraky14@gmailcom" class="action-link">
+                  <i class="fas fa-envelope action-icon"></i>
+                </a>
+                <a href="tel:01066984972" class="action-link">
+                  <i class="fas fa-phone action-icon"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="add-employee-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 class="modal-title">إضافة موظف جديد</h2>
+        <form id="add-employee-form" class="employee-form">
+          <div class="form-group">
+            <label for="employee-name">الاسم كاملاً:</label>
+            <input type="text" id="employee-name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="employee-designation">القسم:</label>
+            <select id="employee-designation" name="designation" required>
+              <option value="العلوم الأساسية">العلوم الأساسية</option>
+              <option value="الهندسة المدنية">الهندسة المدنية</option>
+              <option value="الهندسة الكيميائية">الهندسة الكيميائية</option>
+              <option value="هندسة الأتصالات و الألكترونيات">
+                هندسة الأتصالات و الألكترونيات
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="employee-email">البريد الإلكتروني:</label>
+            <input type="email" id="employee-email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="employee-phone">رقم الهاتف:</label>
+            <input type="tel" id="employee-phone" name="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="employee-image">صورة الموظف (رابط):</label>
+            <input
+              type="text"
+              id="employee-image"
+              name="image"
+              value="IMAGE/placeholder.jpg"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit-btn">
+            إضافة الموظف
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="JS/main.js"></script>
+    <script src="JS/employee.js"></script>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم HRSync</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <h4>نظام أدارة المعهد</h4>
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html" class="active"
+            ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
+          ></a>
+          <a href="employee.html" 
+            ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
+          ></a>
+          <a href="moadien.html" ><span>الهيئة المعاونة</span><i class="fas fa-user"></i
+          ></a>
+          <a href="management.html"><span>الأداريين</span><i class="fas fa-user-tie"></i></a>
+          <a href="leave.html"
+            ><span>الإجازات</span><i class="fas fa-door-open"></i
+          ></a>
+          <a href="#"><span>الإعدادات</span><i class="fas fa-cog"></i></a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-header">
+          <div class="page-title-section">
+            <h1 class="page-title-name">الرئيسية</h1>
+          </div>
+
+          <div class="search-box">
+            <input type="text" placeholder="Search here..." />
+            <i class="fas fa-search"></i>
+          </div>
+
+          <div class="user-profile">
+            <button id="theme-toggle" class="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="top-card">
+          <div class="card card-happiness-rate">
+            <div class="icon-box"><i class="fas fa-users"></i></div>
+            <div class="details">
+              <span class="count">50 / 120</span>
+              <span class="title">أجمالي عدد الموظفين </span>
+            </div>
+          </div>
+
+          <div class="card card-happiness-rate">
+            <div class="icon-box"><i class="fas fa-users"></i></div>
+            <div class="details">
+              <span class="count">50 / 120</span>
+              <span class="title">أجمالي عدد الهيئة المعاونة </span>
+            </div>
+          </div>
+
+          <div class="card card-on-leave">
+            <div class="icon-box"><i class="fas fa-door-open"></i></div>
+            <div class="details">
+              <span class="count">24 / 120</span>
+              <span class="title">في إجازة</span>
+            </div>
+          </div>
+
+          <div class="card card-new-joinee">
+            <div class="icon-box"><i class="fas fa-user-plus"></i></div>
+            <div class="details">
+              <span class="count">20 / 120</span>
+              <span class="title">منضمون حديثاً</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="dashboard-grid">
+          <div class="card employee-status">
+            <h4>
+              حالة الموظفين
+              <select>
+                <option>هذا الأسبوع</option>
+                <option>الأسبوع السابق</option>
+                <option>الشهر السابق</option>
+                <option>شهر 1</option>
+                <option>شهر 2</option>
+                <option>شهر 3</option>
+                <option>شهر 4</option>
+                <option>شهر 5</option>
+                <option></option>
+              </select>
+            </h4>
+
+            <div class="status-content">
+              <div class="total">إجمالي الموظفين <span>120</span></div>
+              <div class="status-list">
+                <div class="status-item">
+                  <h4><span class="label"> الموظفين (42%)</span></h4>
+                  <p>47 موظف</p>
+                </div>
+
+                <div class="status-item">
+                  <h4><span class="label"> الهيئة المعاونة (42%)</span></h4>
+                  <p>15 موظف</p>
+                </div>
+
+                <div class="status-item">
+                  <h4><span class="label">تحت الاختبار (42%)</span></h4>
+                  <p>47 موظف</p>
+                </div>
+              </div>
+
+              <button class="view-all-btn">عرض جميع الموظفين</button>
+            </div>
+          </div>
+
+          <div class="card attendance-overview">
+            <h4>
+              نظرة علي الحضور
+              <select>
+                <option>اليوم</option>
+                <option>الأحد</option>
+                <option>الأثنين</option>
+                <option>الثلاثاء</option>
+                <option>الأربعاء</option>
+              </select>
+            </h4>
+            <div class="attendance-ring">
+              <div class="chart-container">
+                <div class="ring-chart">
+                  <span class="total-count">120</span>
+                  <small>إجمالي الحضور</small>
+                </div>
+              </div>
+              <div class="status-legend">
+                <div class="legend-item">
+                  حاضر<span>75%</span><span class="dot present"></span>
+                </div>
+                <div class="legend-item">
+                  متأخر<span>10%</span><span class="dot late"></span>
+                </div>
+                <div class="legend-item">
+                  غائب<span>10%</span><span class="dot absent"></span>
+                </div>
+              </div>
+            </div>
+            <button class="view-all-btn">عرض التفاصيل</button>
+          </div>
+
+          <div class="card clock-in-out">
+            <h3>
+              الدخول/الخروج
+              <select>
+                <option>جميع الأقسام</option>
+                <option>قسم العلوم الأساسية</option>
+                <option>قسم الهندسة الكيميائية</option>
+                <option>قسم الهندسة المدنية</option>
+                <option>قسم هندسة الأتصالات و الألكترونيات</option>
+              </select>
+            </h3>
+            <div class="clock-list">
+              <div class="clock-item">
+                <img
+                  src="IMAGE/saraElhady.jpg"
+                  alt="شيرلي بيكر"
+                  class="avatar"
+                />
+                <div>
+                  <strong>د/ سارة الهادي</strong>
+                  <small> في قسم العلوم الاساسية</small>
+                </div>
+                <span class="status-chip green">09:05</span>
+              </div>
+              <div class="clock-item">
+                <img src="IMAGE/saraELgalad.png" alt=" " class="avatar" />
+                <div>
+                  <strong>د/ سارة الهادي</strong>
+                  <small> في قسم العلوم الاساسية</small>
+                </div>
+                <span class="status-chip green">09:00</span>
+              </div>
+              <div class="clock-item">
+                <img
+                  src="IMAGE/saraElhady.jpg"
+                  alt="شيرلي بيكر"
+                  class="avatar"
+                />
+                <div>
+                  <strong>د/ سارة الهادي</strong>
+                  <small> في قسم الهندسة المدنية</small>
+                </div>
+                <span class="status-chip green">09:20</span>
+              </div>
+
+              <div class="clock-item">
+                <img src="IMAGE/saraELgalad.png" alt=" " class="avatar" />
+                <div>
+                  <strong> د / سارة الجلاد</strong>
+                  <small> في قسم الهندسة الكيميائية</small>
+                </div>
+                <span class="status-chip green">09:35</span>
+              </div>
+
+              <div class="clock-item">
+                <img src="IMAGE/saraELgalad.png" alt=" " class="avatar" />
+                <div>
+                  <strong> د / سارة الجلاد</strong>
+                  <small> في قسم الهندسة الكيمياءية</small>
+                </div>
+                <span class="status-chip green">09:35</span>
+              </div>
+            </div>
+            <button class="view-all-btn">عرض جميع الحضور</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="JS/main.js"></script>
+  </body>
+</html>
