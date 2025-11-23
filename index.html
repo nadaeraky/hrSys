@@ -5,28 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>لوحة تحكم HRSync</title>
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/leave.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body>
+  <body class="dark-mode">
     <div class="container">
       <aside class="sidebar">
         <div class="logo">
           <h4>نظام أدارة المعهد</h4>
           <i class="fas fa-sync-alt"></i>
         </div>
+
         <nav class="nav-links">
           <a href="index.html" class="active"
             ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
           ></a>
-          <a href="employee.html" 
+          <a href="employee.html"
             ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
           ></a>
-          <a href="moadien.html" ><span>الهيئة المعاونة</span><i class="fas fa-user"></i
+          <a href="moadien.html"
+            ><span>الهيئة المعاونة</span><i class="fas fa-user"></i
           ></a>
-          <a href="management.html"><span>الأداريين</span><i class="fas fa-user-tie"></i></a>
+          <a href="management.html"
+            ><span>الأداريين</span><i class="fas fa-user-tie"></i
+          ></a>
           <a href="leave.html"
             ><span>الإجازات</span><i class="fas fa-door-open"></i
           ></a>
@@ -41,13 +46,16 @@
           </div>
 
           <div class="search-box">
-            <input type="text" placeholder="Search here..." />
+            <input type="text" placeholder="أبحث هنا..." id="search-input" />
             <i class="fas fa-search"></i>
           </div>
 
-          <div class="user-profile">
+          <div class="header-actions">
             <button id="theme-toggle" class="theme-toggle-btn">
               <i class="fas fa-moon"></i>
+            </button>
+            <button id="menu-toggle" class="menu-toggle-btn">
+              <i class="fas fa-bars"></i>
             </button>
           </div>
         </header>
@@ -229,5 +237,6 @@
     </div>
 
     <script src="JS/main.js"></script>
+    <!-- <script src="JS/leave.js"></script> -->
   </body>
 </html>
