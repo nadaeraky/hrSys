@@ -1,11 +1,9 @@
 .settings-container {
-    
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
 }
 .settings-sidebar {
-    
   width: 250px;
   min-width: 250px;
   background-color: var(--card-background);
@@ -161,11 +159,7 @@ input:checked + .slider:before {
   .form-row .control {
     text-align: right;
   }
-  .header-actions i{
-margin-top:30px;
-
+  .header-actions i {
+    margin-top: 30px;
   }
-
-
 }
-
