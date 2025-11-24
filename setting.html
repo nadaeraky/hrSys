@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام HR - الإعدادات</title>
+    <link rel="stylesheet" href="CSS/leave.css" />
+    <link rel="stylesheet" href="CSS/setting.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <h4>نظام أدارة المعهد</h4>
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
+          ></a>
+          <a href="employee.html"
+            ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
+          ></a>
+          <a href="moadien.html"
+            ><span>الهيئة المعاونة</span><i class="fas fa-user"></i
+          ></a>
+          <a href="management.html"
+            ><span>الأداريين</span><i class="fas fa-user-tie"></i
+          ></a>
+          <a href="leave.html"
+            ><span>الإجازات</span><i class="fas fa-door-open"></i
+          ></a>
+          <a href="#" class="active"
+            ><span>الإعدادات</span><i class="fas fa-cog"></i
+          ></a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-header">
+          <div class="page-title-section">
+            <h1 class="page-title-name">إعدادات النظام</h1>
+            <span class="text-light">إدارة وتخصيص تجربتك</span>
+          </div>
+          <div class="header-actions">
+            <button id="theme-toggle" class="theme-toggle-btn">
+              <i class="fas fa-adjust"></i>
+            </button>
+            <button id="menu-toggle" class="menu-toggle-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="settings-container">
+          <div class="settings-sidebar">
+            <h3>أقسام الإعدادات</h3>
+            <nav class="settings-nav">
+              <a href="#general" class="active-setting"
+                ><i class="fas fa-wrench"></i>عام</a
+              >
+              <a href="#notifications"><i class="fas fa-bell"></i>الإشعارات</a>
+              <a href="#security"><i class="fas fa-lock"></i>الأمان</a>
+            </nav>
+          </div>
+
+          <div class="settings-content">
+            <section id="general" class="setting-section">
+              <h4>الإعدادات العامة</h4>
+              <div class="form-row">
+                <label for="governorate-select"
+                  >محافظة المعهد
+                  <small class="text-light"
+                    >(لتحديد الموقع الجغرافي)</small
+                  ></label
+                >
+                <div class="control">
+                  <select id="governorate-select" class="form-control">
+                    <option value="damitta">دمياط</option>
+                    <option value="cairo">القاهرة</option>
+                    <option value="elmansoura">المنصورة</option>
+                    <option value="port-said">بورسعيد</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>تحديث بيانات المستخدم</label>
+                <div class="control">
+                  <button class="btn-primary">حفظ التغييرات</button>
+                </div>
+              </div>
+            </section>
+
+            <section id="notifications" class="setting-section">
+              <h4>إعدادات الإشعارات</h4>
+              <div class="form-row">
+                <label>إشعارات البريد الإلكتروني (عند الموافقة على طلب)</label>
+                <div class="control">
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>إشعارات المتصفح (طلبات جديدة)</label>
+                <div class="control">
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section id="security" class="setting-section">
+              <h4>الأمان والوصول</h4>
+              <div class="form-row">
+                <label>تغيير كلمة المرور</label>
+                <div class="control">
+                  <button class="btn-primary">تغيير</button>
+                </div>
+              </div>
+              <div class="form-row">
+                <label
+                  >تسجيل الخروج من كل الأجهزة
+                  <small class="text-light">(لأسباب أمنية)</small></label
+                >
+                <div class="control">
+                  <button class="btn-danger">تسجيل الخروج</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="JS/leave.js"></script>
+    <script src="JS/list.js"></script>
+   
+  </body>
+</html>
