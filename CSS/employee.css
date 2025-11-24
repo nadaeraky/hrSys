@@ -34,98 +34,6 @@ body.dark-mode {
   color: var(--text-color);
 }
 
-.sidebar {
-  width: 250px;
-  min-width: 250px;
-  background-color: var(--primary-hover);
-  color: var(--sidebar-text);
-  padding: 20px 15px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: all var(--transition-speed) ease;
-}
-
-.logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding: 0 5px;
-}
-
-.nav-links a {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 12px 15px;
-  margin: 8px 0;
-  border-radius: 8px;
-  color: var(--sidebar-text);
-  text-decoration: none;
-  transition: background-color var(--transition-speed);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: var(--sidebar-active-bg);
-}
-
-.nav-links a i {
-  margin-right: 15px;
-}
-
-.main-content {
-  flex-grow: 1;
-  padding: 20px 30px;
-  width: 100%;
-}
-
-.top-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--border-color);
-}
-.page-title-name {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.search-box {
-  position: relative;
-  width: 250px;
-}
-.search-box input {
-  width: 100%;
-  padding: 8px 15px;
-  padding-left: 35px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background-color: var(--card-background);
-  color: var(--text-color);
-  text-align: right;
-}
-.search-box i {
-  position: absolute;
-  left: 10px;
-  right: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
-.theme-toggle-btn {
-  background: none;
-  border: none;
-  color: var(--text-color);
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
 .employee-controls {
   display: flex;
   justify-content: space-between;
@@ -309,6 +217,135 @@ body.dark-mode .view-toggle-btn {
   background-color: var(--sidebar-active-bg);
 }
 
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--card-background);
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: var(--text-color);
+}
+
+body.dark-mode .modal-content {
+  background-color: var(--card-background);
+}
+
+.close-btn {
+  color: var(--text-light);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.modal-title {
+  text-align: right;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.employee-form .form-group {
+  margin-bottom: 18px;
+  text-align: right;
+}
+
+.employee-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.employee-form input[type="text"],
+.employee-form input[type="email"],
+.employee-form input[type="tel"],
+.employee-form select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.2s;
+  text-align: right;
+}
+
+body.dark-mode .employee-form input[type="text"],
+body.dark-mode .employee-form input[type="email"],
+body.dark-mode .employee-form input[type="tel"],
+body.dark-mode .employee-form select {
+  background-color: var(--sidebar-active-bg);
+  border-color: #333355;
+}
+
+.employee-form input:focus,
+.employee-form select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1.1rem;
+}
+
+.delete-employee-btn {
+  right: 15px;
+  left: auto;
+  color: var(--red);
+  cursor: pointer;
+  transition: opacity 0.2s, color 0.2s;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.delete-employee-btn i {
+  font-size: 1.2rem;
+}
+
+.delete-employee-btn:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
+
+
+
+/* responsive design */
 @media (max-width: 1200px) {
   .employee-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -321,7 +358,6 @@ body.dark-mode .view-toggle-btn {
   }
 }
 
-/* للجوالات */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -334,7 +370,7 @@ body.dark-mode .view-toggle-btn {
     max-height: 0;
     overflow: hidden;
     padding: 0 15px;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   .main-content {
@@ -414,129 +450,4 @@ body.dark-mode .view-toggle-btn {
   .employee-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: var(--card-background);
-  margin: auto;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  color: var(--text-color);
-}
-
-body.dark-mode .modal-content {
-  background-color: var(--card-background);
-}
-
-.close-btn {
-  color: var(--text-light);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-  color: var(--red);
-  text-decoration: none;
-}
-
-.modal-title {
-  text-align: right;
-  margin-bottom: 25px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 10px;
-}
-
-/* تنسيقات النموذج */
-.employee-form .form-group {
-  margin-bottom: 18px;
-  text-align: right;
-}
-
-.employee-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.employee-form input[type="text"],
-.employee-form input[type="email"],
-.employee-form input[type="tel"],
-.employee-form select {
-  width: 100%;
-  padding: 10px 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  box-sizing: border-box;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: border-color 0.2s;
-  text-align: right;
-}
-
-body.dark-mode .employee-form input[type="text"],
-body.dark-mode .employee-form input[type="email"],
-body.dark-mode .employee-form input[type="tel"],
-body.dark-mode .employee-form select {
-  background-color: var(--sidebar-active-bg);
-  border-color: #333355;
-}
-
-.employee-form input:focus,
-.employee-form select:focus {
-  border-color: var(--primary-color);
-  outline: none;
-}
-
-.form-submit-btn {
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 1.1rem;
-}
-
-.delete-employee-btn {
-  right: 15px;
-  left: auto;
-  color: var(--red);
-  cursor: pointer;
-  transition: opacity 0.2s, color 0.2s;
-  opacity: 0.7;
-  z-index: 10;
-}
-
-.delete-employee-btn i {
-  font-size: 1.2rem;
-}
-
-.delete-employee-btn:hover {
-  opacity: 1;
-  color: var(--red);
 }

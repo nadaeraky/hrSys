@@ -144,7 +144,6 @@ document.getElementById("save-edit-btn").addEventListener("click", () => {
     const date1 = new Date(start);
     const date2 = new Date(end);
     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    // بحول الوقت الي ملي ثانية وبقربه لرقم صحيح
     const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
     return diffDays;
   };

@@ -560,6 +560,7 @@ body.dark-mode .card select {
   accent-color: var(--primary-color);
 }
 
+/* responsive design */
 @media (max-width: 1200px) {
   .main-content {
     padding: 15px 20px;
@@ -590,7 +591,6 @@ body.dark-mode .card select {
 }
 
 @media (max-width: 768px) {
-
   .top-card,
   .dashboard-grid,
   .bottom-sections-grid {
