@@ -15,8 +15,6 @@ document.querySelectorAll(".settings-nav a").forEach((link) => {
   });
 });
 
-
-
 // عرض القسم العام افتراضياً عند التحميل
 document.querySelectorAll(".setting-section").forEach((section, index) => {
   section.style.display = index === 0 ? "block" : "none";

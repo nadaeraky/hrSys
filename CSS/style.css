@@ -386,6 +386,13 @@ body.dark-mode .card select {
   background-color: var(--blue);
 }
 
+/* Clock In/Out List Styles */
+.clock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between employee entries */
+}
+
 .clock-item {
   text-align: right;
   display: flex;
@@ -395,6 +402,7 @@ body.dark-mode .card select {
   padding: 10px 0;
   border-bottom: 1px solid var(--border-color);
   transition: border-color var(--transition-speed);
+  gap: 10px; /* Space between text and avatar */
 }
 
 .clock-item .avatar {
@@ -402,8 +410,8 @@ body.dark-mode .card select {
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
-  margin-left: 0;
+  margin-right: 0;
+  margin-left: 0; /* No margin here, handled by flex gap */
 }
 
 .clock-item small {
@@ -427,23 +435,39 @@ body.dark-mode .card select {
   background-color: var(--green);
 }
 
+.status-chip.red { /* Style for late clock in */
+  background-color: var(--red);
+}
+
 .late-entry {
   flex-wrap: wrap;
   align-items: flex-start;
   padding-bottom: 15px;
 }
 
+/* Clock Details for Delay and Date (RTL Adjusted) */
 .clock-details {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: -10px; /* Pull it closer to the item above */
+  margin-bottom: 15px;
   font-size: 12px;
   color: var(--text-light);
-  padding-right: 50px; /* تم التعديل من left إلى right لـ RTL */
+  /* Adjust padding for RTL - aligning to the right of the avatar column */
+  padding-right: 50px; 
   padding-left: 0;
   flex-direction: row-reverse;
   text-align: right;
+  border-bottom: 1px solid var(--border-color); /* Separator */
+  padding-bottom: 15px; 
+}
+/* Ensure the last details item doesn't have a bottom border */
+.clock-list > :last-child.clock-details {
+  border-bottom: none;
+}
+.clock-list .clock-item:nth-last-child(2) {
+    border-bottom: none; /* Remove border from the clock-item above the last clock-details */
 }
 
 .clock-details i {
@@ -451,6 +475,7 @@ body.dark-mode .card select {
   margin-left: 0;
   color: var(--primary-color);
 }
+
 
 .bottom-sections-grid {
   display: grid;
@@ -615,6 +640,7 @@ body.dark-mode .card select {
   .clock-details span {
     width: 50%;
     margin-bottom: 5px;
+    text-align: right;
   }
 
   .applicant-tabs {

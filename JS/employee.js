@@ -5,6 +5,32 @@ const form = document.getElementById("add-employee-form");
 const employeeGrid = document.querySelector(".employee-grid");
 const designationFilter = document.getElementById("designation-filter");
 
+
+
+
+// filter employee
+function filterEmployeesByDesignation() {
+  const selectedDesignation = designationFilter.value;
+
+  const cards = document.querySelectorAll(".employee-card");
+
+  cards.forEach((card) => {
+    const cardDesignation = card.dataset.designation;
+
+    if (selectedDesignation === "" || cardDesignation === selectedDesignation) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// عند حدوث اي تغير من اليوزر استدعي دالة الفلتر
+designationFilter.addEventListener("change", filterEmployeesByDesignation);
+
+
+
+
 // delete button
 function addDeleteListener(cardElement) {
   const deleteBtn = cardElement.querySelector(".delete-employee-btn");
@@ -15,51 +41,30 @@ function addDeleteListener(cardElement) {
     };
   }
 }
-
+// تفعيل زر الحدف
 document.querySelectorAll(".employee-card").forEach((card) => {
   addDeleteListener(card);
 });
 
+
+
+
+// اظهار نافدة أضافة موظف
 btn.onclick = function () {
   modal.style.display = "flex";
 };
-
+// أخفاء نافدة أضافة موظف
 span.onclick = function () {
   modal.style.display = "none";
 };
-
+// عند الضغط علي اي مكان في الشاشة أغلاق النافدة
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
 
-form.onsubmit = function (event) {
-  event.preventDefault();
 
-  const name = document.getElementById("employee-name").value;
-  const designation = document.getElementById("employee-designation").value;
-  const email = document.getElementById("employee-email").value;
-  const phone = document.getElementById("employee-phone").value;
-  const image = document.getElementById("employee-image").value;
-
-  const newEmployeeCard = createEmployeeCard(
-    name,
-    designation,
-    email,
-    phone,
-    image
-  );
-
-  employeeGrid.prepend(newEmployeeCard);
-
-  addDeleteListener(newEmployeeCard);
-
-  modal.style.display = "none";
-  form.reset();
-
-  filterEmployeesByDesignation();
-};
 
 function createEmployeeCard(name, role, email, phone, imageSrc) {
   const card = document.createElement("div");
@@ -92,21 +97,32 @@ function createEmployeeCard(name, role, email, phone, imageSrc) {
   return card;
 }
 
-// filter employee
-function filterEmployeesByDesignation() {
-  const selectedDesignation = designationFilter.value;
 
-  const cards = document.querySelectorAll(".employee-card");
 
-  cards.forEach((card) => {
-    const cardDesignation = card.dataset.designation;
+form.onsubmit = function (event) {
+  // منع اعادة تحميل الصفحة
+  event.preventDefault();
 
-    if (selectedDesignation === "" || cardDesignation === selectedDesignation) {
-      card.style.display = "flex";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
+  const name = document.getElementById("employee-name").value;
+  const designation = document.getElementById("employee-designation").value;
+  const email = document.getElementById("employee-email").value;
+  const phone = document.getElementById("employee-phone").value;
+  const image = document.getElementById("employee-image").value;
 
-designationFilter.addEventListener("change", filterEmployeesByDesignation);
+  const newEmployeeCard = createEmployeeCard(
+    name,
+    designation,
+    email,
+    phone,
+    image
+  );
+// أضافه الكارد اول واحدة
+  employeeGrid.prepend(newEmployeeCard);
+
+  addDeleteListener(newEmployeeCard);
+
+  modal.style.display = "none";
+  form.reset();
+
+  filterEmployeesByDesignation();
+};

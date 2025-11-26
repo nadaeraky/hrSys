@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>لوحة تحكم HRSync</title>
     <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/leave.css" />
+    <link rel="stylesheet" href="CSS/leave.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -62,7 +62,6 @@
             </button>
           </div>
         </header>
-        <!-- cards -->
         <div class="top-card">
           <div class="card card-happiness-rate">
             <div class="details">
@@ -96,7 +95,6 @@
             <div class="icon-box"><i class="fas fa-user-plus"></i></div>
           </div>
         </div>
-        <!-- selest input -->
         <section class="dashboard-grid">
           <div class="card employee-status">
             <h4>
@@ -137,7 +135,6 @@
             </div>
           </div>
 
-          <!-- attendance overview -->
           <div class="card attendance-overview">
             <h4>
               نظرة علي الحضور
@@ -171,88 +168,35 @@
             <button class="view-all-btn">عرض التفاصيل</button>
           </div>
 
-          <!-- in and out -->
           <div class="card clock-in-out">
             <h3>
               الدخول/الخروج
-              <select>
-                <option>جميع الأقسام</option>
-                <option>قسم العلوم الأساسية</option>
-                <option>قسم الهندسة الكيميائية</option>
-                <option>قسم الهندسة المدنية</option>
-                <option>قسم هندسة الأتصالات و الألكترونيات</option>
+              <select id="department-filter">
+                <option value="all">جميع الأقسام</option>
+                <option value="basic-science">قسم العلوم الأساسية</option>
+                <option value="chemical-engineering">
+                  قسم الهندسة الكيميائية
+                </option>
+                <option value="civil-engineering">قسم الهندسة المدنية</option>
+                <option value="tele-electronics">
+                  قسم هندسة الأتصالات و الألكترونيات
+                </option>
               </select>
             </h3>
-            <div class="clock-list">
-              <div class="clock-item">
-                <img
-                  src="IMAGE/saraElhady.jpg"
-                  alt=" employee"
-                  class="avatar"
-                />
-                <div>
-                  <strong>د/ سارة الهادي</strong>
-                  <small> في قسم العلوم الاساسية</small>
-                </div>
-                <span class="status-chip green">09:05</span>
+            <div class="clock-list" id="clock-list-container">
               </div>
-              <div class="clock-item">
-                <img
-                  src="IMAGE/saraELgalad.png"
-                  alt=" employee"
-                  class="avatar"
-                />
-                <div>
-                  <strong>د/ سارة الهادي</strong>
-                  <small> في قسم العلوم الاساسية</small>
-                </div>
-                <span class="status-chip green">09:00</span>
-              </div>
-              <div class="clock-item">
-                <img
-                  src="IMAGE/saraElhady.jpg"
-                  alt=" employee"
-                  class="avatar"
-                />
-                <div>
-                  <strong>د/ سارة الهادي</strong>
-                  <small> في قسم الهندسة المدنية</small>
-                </div>
-                <span class="status-chip green">09:20</span>
-              </div>
-
-              <div class="clock-item">
-                <img
-                  src="IMAGE/saraELgalad.png"
-                  alt="employee "
-                  class="avatar"
-                />
-                <div>
-                  <strong> د / سارة الجلاد</strong>
-                  <small> في قسم الهندسة الكيميائية</small>
-                </div>
-                <span class="status-chip green">09:35</span>
-              </div>
-
-              <div class="clock-item">
-                <img
-                  src="IMAGE/saraELgalad.png"
-                  alt="employee "
-                  class="avatar"
-                />
-                <div>
-                  <strong> د / سارة الجلاد</strong>
-                  <small> في قسم الهندسة الكيمياءية</small>
-                </div>
-                <span class="status-chip green">09:35</span>
-              </div>
-            </div>
-            <button class="view-all-btn">عرض جميع الحضور</button>
+            <button
+              class="view-all-btn"
+              onclick="window.location.href='attendance-details.html';"
+            >
+              عرض جميع الحضور
+            </button>
           </div>
         </section>
-      </main>
+        </main>
     </div>
 
     <script src="JS/list.js"></script>
+    <script src="JS/clock.js"></script>
   </body>
 </html>

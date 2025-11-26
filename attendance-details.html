@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تـفـاصـيـل الحـضـور والإنـصـراف</title>
+    <link rel="stylesheet" href="CSS/leave.css" />
+    <link rel="stylesheet" href="CSS/attendance.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body class="dark-mode">
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <h4>نظام أدارة المعهد</h4>
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html"
+            ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
+          ></a>
+          <a href="employee.html"
+            ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
+          ></a>
+          <a href="moadien.html"
+            ><span>الهيئة المعاونة</span><i class="fas fa-user"></i
+          ></a>
+          <a href="management.html"
+            ><span>الأداريين</span><i class="fas fa-user-tie"></i
+          ></a>
+          <a href="leave.html"
+            ><span>الإجازات</span><i class="fas fa-door-open"></i
+          ></a>
+          <a href="setting.html"
+            ><span>الإعدادات</span><i class="fas fa-cog"></i
+          ></a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-header">
+          <div class="page-title-section">
+            <h1 class="page-title-name">تفاصيل الحضور والانصراف</h1>
+            <p class="breadcrumbs">
+              <a href="index.html">الرئيسية</a> / الحضور
+            </p>
+          </div>
+
+          <div class="header-actions">
+            <button id="theme-toggle" class="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+            <button id="menu-toggle" class="menu-toggle-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </header>
+
+        <section class="attendance-controls">
+          <div class="control-group">
+            <label for="date-filter">تاريخ اليوم:</label>
+            <input type="date" id="date-filter" value="2025-11-26" />
+          </div>
+
+          <div class="control-group">
+            <label for="dept-filter">تصفية حسب القسم:</label>
+            <select id="dept-filter">
+              <option value="all">جميع الأقسام</option>
+              <option value="basic-science">قسم العلوم الأساسية</option>
+              <option value="chemical-engineering">الهندسة الكيميائية</option>
+              <option value="civil-engineering">الهندسة المدنية</option>
+              <option value="tele-electronics">الاتصالات والإلكترونيات</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="status-filter">حالة الحضور:</label>
+            <select id="status-filter">
+              <option value="all">الكل</option>
+              <option value="on-time">حاضر في الموعد</option>
+              <option value="late">متأخر</option>
+              <option value="absent">غائب</option>
+            </select>
+          </div>
+
+          <button class="export-btn" id="export-attendance-btn">
+            <i class="fas fa-file-excel"></i> تصدير لـ Excel
+          </button>
+        </section>
+
+        <section class="attendance-table-container card">
+          <div class="table-header-info">
+            <h2>
+              سجل الحضور اليومي
+              <span id="record-count">(0 موظف)</span>
+            </h2>
+            <p>
+              <i class="fas fa-clock"></i> مواعيد العمل الرسمية:
+              <strong class="text-green">09:00 ص</strong> حتى
+              <strong class="text-red">04:00 م</strong>
+            </p>
+          </div>
+
+          <div class="responsive-table">
+            <table class="attendance-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>اسم الموظف</th>
+                  <th>القسم</th>
+                  <th>الدخول (بصمة)</th>
+                  <th>الخروج (بصمة)</th>
+                  <th>التأخير</th>
+                  <th>الخروج المبكر</th>
+                  <th>إجمالي ساعات العمل</th>
+                  <th>الحالة</th>
+                </tr>
+              </thead>
+              <tbody id="attendance-tbody"></tbody>
+            </table>
+          </div>
+          
+        </section>
+      </main>
+    </div>
+
+    <script src="JS/list.js"></script>
+    <script src="JS/attendance.js"></script>
+  </body>
+</html>

@@ -14,6 +14,7 @@ function closeModal(modalId) {
   }
 }
 
+// أغلاق النافدة التي تحتوي علي X او زر
 document
   .querySelectorAll(".close-btn, .modal-footer button[data-modal]")
   .forEach((element) => {
@@ -54,8 +55,9 @@ function applyTableFilters() {
     const typeMatch = selectedType === "all" || leaveType === selectedType;
 
     const searchMatch = employeeName.includes(searchText);
-
+    // النوع و البحث لو موجودين
     if (typeMatch && searchMatch) {
+      // اظهار الصف
       row.style.display = "";
     } else {
       row.style.display = "none";
@@ -63,11 +65,12 @@ function applyTableFilters() {
   });
 }
 
-// تحديث الجدول
+// تحديث الجدول عند أختيار نوع الاجازة
 leaveTypeFilter.addEventListener("change", applyTableFilters);
+// تحديث الجدول فوري عند تغيير او أضافة اي حرف
 tableSearchInput.addEventListener("input", applyTableFilters);
 
-// نافدة البحث
+// نافدة تأكيد البحث
 document.querySelectorAll(".delete-icon").forEach((icon) => {
   icon.addEventListener("click", (e) => {
     const leaveId = e.currentTarget.getAttribute("data-id");
@@ -85,19 +88,18 @@ document.querySelectorAll(".delete-icon").forEach((icon) => {
   });
 });
 
-// Confirmation button handler
+// لحدف الصف عند الضغط علي السلة
 document.getElementById("confirm-delete-btn").addEventListener("click", (e) => {
   const leaveIdToDelete = e.currentTarget.getAttribute("data-leave-id");
 
-  console.log(`Sending request to delete leave with ID: ${leaveIdToDelete}`);
-
+  // id of row
   const rowToDelete = document.querySelector(
     `tr[data-leave-id="${leaveIdToDelete}"]`
   );
   if (rowToDelete) {
     rowToDelete.remove();
-    console.log(`Leave ID ${leaveIdToDelete} deleted successfully from UI.`);
   }
+  // نافدة الحدف
   closeModal("delete-modal");
 });
 
@@ -111,15 +113,17 @@ document.querySelectorAll(".edit-icon").forEach((icon) => {
       .querySelector("[data-employee-name]")
       .textContent.trim();
     const leaveType = row.getAttribute("data-leave-type");
+    // السطر رقم 4 في td
     const startDate = row.children[3].textContent.trim();
+    // السطر رقم 5 في td
     const endDate = row.children[4].textContent.trim();
-
+    // تنسيق شكل التاريخ
     const formatDateForInput = (dateStr) => {
       const parts = dateStr.split("-");
       return parts.length === 3 ? `${parts[2]}-${parts[1]}-${parts[0]}` : "";
     };
 
-    // Populate the modal form
+    // ملئ البيانات في فورم التعديل اللي هتظهر ليا
     document.getElementById("edit-leave-id").value = leaveId;
     document.getElementById("edit-employee-name").value = employeeName;
     document.getElementById("edit-leave-type").value = leaveType;
@@ -127,12 +131,12 @@ document.querySelectorAll(".edit-icon").forEach((icon) => {
       formatDateForInput(startDate);
     document.getElementById("edit-end-date").value =
       formatDateForInput(endDate);
-
+    // لفتح النافدة
     openModal("edit-modal");
   });
 });
 
-// Save Edit button handler
+// البيانات بعد التحديث
 document.getElementById("save-edit-btn").addEventListener("click", () => {
   const leaveIdToEdit = document.getElementById("edit-leave-id").value;
   const newType = document.getElementById("edit-leave-type").value;
@@ -147,8 +151,6 @@ document.getElementById("save-edit-btn").addEventListener("click", () => {
     const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
     return diffDays;
   };
-
-  // console.log(`Sending request to update leave ID ${leaveIdToEdit} with new data...`);
 
   // updated data after input it unto form^^
   const rowToUpdate = document.querySelector(
@@ -175,14 +177,12 @@ document.getElementById("save-edit-btn").addEventListener("click", () => {
     rowToUpdate
       .querySelector(".info-icon")
       .setAttribute("data-type-info", newType);
-
-    // console.log(`Leave ID ${leaveIdToEdit} updated successfully in UI.`);
   }
 
   closeModal("edit-modal");
 });
 
-// explaination window
+//  معلومات الاجازه
 const leaveInfo = {
   Annual: {
     name: "إجازة سنوية",
