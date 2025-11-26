@@ -95,77 +95,26 @@
             <div class="icon-box"><i class="fas fa-user-plus"></i></div>
           </div>
         </div>
-        <section class="dashboard-grid">
+       <section class="dashboard-grid equal-height-grid">
           <div class="card employee-status">
             <h4>
               حالة الموظفين
-              <select>
-                <option>هذا الأسبوع</option>
-                <option>الأسبوع السابق</option>
-                <option>الشهر السابق</option>
-                <option>شهر 1</option>
-                <option>شهر 2</option>
-                <option>شهر 3</option>
-                <option>شهر 4</option>
-                <option>شهر 5</option>
-                <option></option>
+              <select id="employee-status-filter">
+                <option value="all">كل السنوات</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
               </select>
             </h4>
 
             <div class="status-content">
               <div class="total">إجمالي الموظفين <span>120</span></div>
-              <div class="status-list">
-                <div class="status-item">
-                  <h4><span class="label"> الموظفين (42%)</span></h4>
-                  <p>47 موظف</p>
+              <div class="status-list" id="employee-status-list">
                 </div>
-
-                <div class="status-item">
-                  <h4><span class="label"> الهيئة المعاونة (42%)</span></h4>
-                  <p>15 موظف</p>
-                </div>
-
-                <div class="status-item">
-                  <h4><span class="label">تحت الاختبار (42%)</span></h4>
-                  <p>47 موظف</p>
-                </div>
-              </div>
 
               <button class="view-all-btn">عرض جميع الموظفين</button>
             </div>
-          </div>
-
-          <div class="card attendance-overview">
-            <h4>
-              نظرة علي الحضور
-              <select>
-                <option>اليوم</option>
-                <option>الأحد</option>
-                <option>الأثنين</option>
-                <option>الثلاثاء</option>
-                <option>الأربعاء</option>
-              </select>
-            </h4>
-            <div class="attendance-ring">
-              <div class="chart-container">
-                <div class="ring-chart">
-                  <span class="total-count">120</span>
-                  <small>إجمالي الحضور</small>
-                </div>
-              </div>
-              <div class="status-legend">
-                <div class="legend-item">
-                  حاضر<span>75%</span><span class="dot present"></span>
-                </div>
-                <div class="legend-item">
-                  متأخر<span>10%</span><span class="dot late"></span>
-                </div>
-                <div class="legend-item">
-                  غائب<span>10%</span><span class="dot absent"></span>
-                </div>
-              </div>
-            </div>
-            <button class="view-all-btn">عرض التفاصيل</button>
           </div>
 
           <div class="card clock-in-out">

@@ -96,9 +96,32 @@ body {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-bottom: 20px;
+}
+
+.equal-height-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.equal-height-grid > .card {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+@media (min-width: 1201px) {
+  .dashboard-grid.equal-height-grid {
+    display: flex;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid.equal-height-grid {
+    flex-direction: column;
+  }
 }
 
 .employee-status {
@@ -435,7 +458,8 @@ body.dark-mode .card select {
   background-color: var(--green);
 }
 
-.status-chip.red { /* Style for late clock in */
+.status-chip.red {
+  /* Style for late clock in */
   background-color: var(--red);
 }
 
@@ -455,19 +479,19 @@ body.dark-mode .card select {
   font-size: 12px;
   color: var(--text-light);
   /* Adjust padding for RTL - aligning to the right of the avatar column */
-  padding-right: 50px; 
+  padding-right: 50px;
   padding-left: 0;
   flex-direction: row-reverse;
   text-align: right;
   border-bottom: 1px solid var(--border-color); /* Separator */
-  padding-bottom: 15px; 
+  padding-bottom: 15px;
 }
 /* Ensure the last details item doesn't have a bottom border */
 .clock-list > :last-child.clock-details {
   border-bottom: none;
 }
 .clock-list .clock-item:nth-last-child(2) {
-    border-bottom: none; /* Remove border from the clock-item above the last clock-details */
+  border-bottom: none; /* Remove border from the clock-item above the last clock-details */
 }
 
 .clock-details i {
@@ -475,7 +499,6 @@ body.dark-mode .card select {
   margin-left: 0;
   color: var(--primary-color);
 }
-
 
 .bottom-sections-grid {
   display: grid;

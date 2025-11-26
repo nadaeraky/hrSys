@@ -1,89 +1,60 @@
-// JS/clock.js
-
-// ==========================================================
-// 1. تعريف بيانات الموظفين (Placeholder for Backend Data)
-// ==========================================================
-// **ملاحظة للـ Backend:** هذه البيانات يجب أن يتم جلبها من API لاحقاً.
 const employeesData = [
   {
-    name: "د/ سارة الهادي",
+    name: "أ.د خالد سمير محمد",
     department: "في قسم العلوم الاساسية",
     departmentKey: "basic-science",
     clockInTime: "09:05",
     avatar: "IMAGE/saraElhady.jpg",
   },
   {
-    name: "د/ سارة الجلاد",
-    department: "في قسم العلوم الاساسية",
-    departmentKey: "basic-science",
+    name: "د.ياسر محمد توفيق علي",
+    department: "في قسم الهندسة الكيميائية",
+    departmentKey: "chemical-engineering",
     clockInTime: "09:00",
     avatar: "IMAGE/saraELgalad.png",
   },
   {
-    name: "أ.د/ خالد منصور",
+    name: "د. أيمن محمد هلال",
     department: "في قسم الهندسة المدنية",
     departmentKey: "civil-engineering",
     clockInTime: "09:20",
     avatar: "IMAGE/saraElhady.jpg",
   },
   {
-    name: "د/ أميرة فؤاد",
+    name: "أ.م.د.سهير محمد بكر عمر",
     department: "في قسم الهندسة الكيميائية",
     departmentKey: "chemical-engineering",
     clockInTime: "09:35",
     avatar: "IMAGE/saraELgalad.png",
   },
-  {
-    name: "د/ محمد علي",
-    department: "في قسم هندسة الأتصالات و الألكترونيات",
-    departmentKey: "tele-electronics",
-    clockInTime: "10:15",
-    avatar: "IMAGE/saraELgalad.png",
-  },
-  {
-    name: "أ.م.د/ سلمى أحمد",
-    department: "في قسم العلوم الاساسية",
-    departmentKey: "basic-science",
-    clockInTime: "08:50", // حضور مبكر
-    avatar: "IMAGE/saraElhady.jpg",
-  },
 ];
 
 // مواعيد العمل الثابتة
-const WORK_START_HOUR = 9; // 09:00 صباحاً
+const WORK_START_HOUR = 9;
 const WORK_START_MINUTE = 0;
 
-// ==========================================================
-// 2. دالة لحساب التأخير
-// ==========================================================
+// دالة لحساب التأخير
 /**
- * تحسب التأخير بالدقائق عن وقت بدء العمل المحدد (09:00).
- * @param {string} clockInTime - وقت الدخول بصيغة "HH:MM".
- * @returns {number} - عدد دقائق التأخير. 0 إذا لم يكن هناك تأخير.
+ * @param {string} clockInTime
+ * @returns {number}
  */
 function calculateDelayMinutes(clockInTime) {
   const [inHour, inMinute] = clockInTime.split(":").map(Number);
   const workStartMinutes = WORK_START_HOUR * 60 + WORK_START_MINUTE;
   const clockInMinutes = inHour * 60 + inMinute;
 
-  // يتم حساب الفرق إذا كان وقت الدخول بعد وقت بدء العمل
   const delayMinutes = clockInMinutes - workStartMinutes;
 
   return delayMinutes > 0 ? delayMinutes : 0;
 }
 
-// ==========================================================
-// 3. دالة لرسم عنصر الموظف (Clock Item)
-// ==========================================================
+// دالة لرسم عنصر الموظف (Clock Item)
 function createClockItemHTML(employee) {
   const delayMinutes = calculateDelayMinutes(employee.clockInTime);
   const isLate = delayMinutes > 0;
 
-  // تحديد الـ Class المناسب (أخضر للحضور في الموعد أو مبكراً، أحمر للتأخير)
   const statusClass = isLate ? "red" : "green";
-  const delayText = isLate
-    ? `متأخر ${delayMinutes} دقيقة`
-    : "حضور في الموعد";
+  const delayText = isLate ? `متأخر ${delayMinutes} دقيقة` : "حضور في الموعد";
   const clockIcon = isLate ? "fa-exclamation-triangle" : "fa-clock";
 
   return `
@@ -105,12 +76,10 @@ function createClockItemHTML(employee) {
     `;
 }
 
-// ==========================================================
-// 4. دالة لعرض قائمة الحضور المفلترة
-// ==========================================================
+//  دالة لعرض قائمة الحضور المفلترة
 function renderClockList(filterKey) {
   const container = document.getElementById("clock-list-container");
-  if (!container) return; 
+  if (!container) return;
 
   // فلترة البيانات بناءً على المفتاح المحدد
   const filteredEmployees =
@@ -128,19 +97,95 @@ function renderClockList(filterKey) {
   }
 }
 
-// ==========================================================
-// 5. ربط دالة الفلترة مع عنصر الـ Select
-// ==========================================================
+// ربط دالة الفلترة مع عنصر الـ Select
+
 document.addEventListener("DOMContentLoaded", () => {
   const filterSelect = document.getElementById("department-filter");
 
   if (filterSelect) {
-    // 5.1. استدعاء الدالة عند تغيير قيمة الـ Select
+    //  استدعاء الدالة عند تغيير قيمة الـ Select
     filterSelect.addEventListener("change", (event) => {
       renderClockList(event.target.value);
     });
 
-    // 5.2. العرض الأولي (جميع الأقسام)
+    //  العرض الأولي (جميع الأقسام)
     renderClockList(filterSelect.value);
+  }
+});
+
+// بيانات الموظفين الأساسية مع سنة الانضمام (للفلترة حسب السنة)
+const employeesStatusData = [
+  { type: "أعضاء هيئة التدريس", count: 47, percentage: 42, joinYear: 2025 },
+  { type: "الأداريين", count: 15, percentage: 15, joinYear: 2025 },
+  { type: "أعضاء هيئة معاونة", count: 20, percentage: 20, joinYear: 2025 },
+  { type: " تحت تاتدريب ", count: 10, percentage: 10, joinYear: 2025 },
+
+  { type: "أعضاء هيئة التدريس", count: 50, percentage: 50, joinYear: 2024 },
+  { type: "الأداريين", count: 15, percentage: 15, joinYear: 2024 },
+  { type: "أعضاء هيئة معاونة", count: 30, percentage: 30, joinYear: 2024 },
+  { type: " تحت تاتدريب ", count: 5, percentage: 5, joinYear: 2024 },
+
+  { type: "أعضاء هيئة التدريس", count: 65, percentage: 65, joinYear: 2023 },
+  { type: "الأداريين", count: 25, percentage: 25, joinYear: 2023 },
+  { type: "أعضاء هيئة معاونة", count: 10, percentage: 10, joinYear: 2023 },
+  { type: " تحت تاتدريب ", count: 0, percentage: 0, joinYear: 2023 },
+];
+
+/**
+ * دالة لرسم عنصر حالة الموظفين (Status Item)
+ * @param {object} statusItem
+ * @returns {string}
+ */
+function createStatusItemHTML(statusItem) {
+  return `
+    <div class="status-item">
+        <h4><span class="label"> ${statusItem.type} (${statusItem.percentage}%)</span></h4>
+        <p>${statusItem.count} موظف</p>
+    </div>
+  `;
+}
+
+/**
+ * @param {string} filterYear
+ */
+function renderEmployeeStatusList(filterYear) {
+  const container = document.getElementById("employee-status-list");
+  if (!container) return;
+
+  // الفلترة: إذا كانت القيمة 'all' لا يتم تطبيق فلترة
+  const filteredData =
+    filterYear === "all"
+      ? employeesStatusData
+      : employeesStatusData.filter(
+          (item) => item.joinYear.toString() === filterYear
+        );
+
+  // توليد الـ HTML وعرضه
+  container.innerHTML = filteredData.map(createStatusItemHTML).join("");
+
+  // تحديث إجمالي عدد الموظفين (اختياري)
+  const totalCount = filteredData.reduce((sum, item) => sum + item.count, 0);
+  const totalElement = document.querySelector(".employee-status .total span");
+  if (totalElement) {
+    totalElement.textContent = totalCount;
+  }
+
+  // في حالة عدم وجود نتائج
+  if (filteredData.length === 0) {
+    container.innerHTML =
+      '<p style="text-align: center; color: var(--text-light); padding: 10px;">لا توجد بيانات لهذه السنة.</p>';
+  }
+}
+
+// ربط دالة الفلترة مع عنصر الـ Select عند تحميل الصفحة بالكامل
+document.addEventListener("DOMContentLoaded", () => {
+  const filterSelect = document.getElementById("employee-status-filter");
+
+  if (filterSelect) {
+    filterSelect.addEventListener("change", (event) => {
+      renderEmployeeStatusList(event.target.value);
+    });
+
+    renderEmployeeStatusList(filterSelect.value);
   }
 });

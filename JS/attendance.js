@@ -2,7 +2,7 @@
 const ATTENDANCE_DATA = [
   {
     id: 101,
-    name: "د/ خالد منصور",
+    name: "د. أيمن محمد هلال",
     department: "الهندسة المدنية",
     deptKey: "civil-engineering",
     clockIn: "08:55",
@@ -10,7 +10,7 @@ const ATTENDANCE_DATA = [
   },
   {
     id: 102,
-    name: "د/ سارة الهادي",
+    name: "أ.د أحمد محمد الدسوقي",
     department: "العلوم الأساسية",
     deptKey: "basic-science",
     clockIn: "09:15",
@@ -18,7 +18,7 @@ const ATTENDANCE_DATA = [
   },
   {
     id: 103,
-    name: "أ/ محمد علي",
+    name: "م. نور الدين نبيل عيد",
     department: "الاتصالات والإلكترونيات",
     deptKey: "tele-electronics",
     clockIn: "09:00",
@@ -26,7 +26,7 @@ const ATTENDANCE_DATA = [
   },
   {
     id: 104,
-    name: "أ/ أميرة فؤاد",
+    name: "د.ياسر محمد توفيق علي",
     department: "الهندسة الكيميائية",
     deptKey: "chemical-engineering",
     clockIn: "10:30",
@@ -34,7 +34,7 @@ const ATTENDANCE_DATA = [
   },
   {
     id: 105,
-    name: "م/ أحمد جلال",
+    name: ".د رفيق صليب وديع",
     department: "الهندسة المدنية",
     deptKey: "civil-engineering",
     clockIn: "09:05",
@@ -42,12 +42,12 @@ const ATTENDANCE_DATA = [
   },
   {
     id: 106,
-    name: "م/ نادية سعيد",
+    name: "أ.د خالد سمير محمد",
     department: "العلوم الأساسية",
     deptKey: "basic-science",
     clockIn: "00:00",
     clockOut: "00:00",
-  }, // غائب
+  },
 ];
 
 // لحساب مواعيد العمل
@@ -164,9 +164,8 @@ function createTableRowHTML(employee, index) {
     `;
 }
 
-// ==========================================================
-// 4. دالة الفلترة والعرض الرئيسية (لم تتغير)
-// ==========================================================
+// دالة الفلترة والعرض الرئيسية)
+
 function renderAttendanceTable() {
   const deptFilter = document.getElementById("dept-filter").value;
   const statusFilter = document.getElementById("status-filter").value;
@@ -193,14 +192,13 @@ function renderAttendanceTable() {
 
 //   تحول مصفوفة البيانات إلى سلسلة نصية بصيغة CSV.
 function convertDataToCSV(data) {
-  // BOM لضمان عرض الأحرف العربية بشكل صحيح في Excel
   let csv = "\ufeff";
 
   // 1. Headers (الصف الأول)
   const headers = EXPORT_COLUMNS.map((col) => col.header);
   csv += headers.join(",") + "\n";
 
-  // 2. Data Rows (صفوف البيانات)
+  // (صفوف البيانات)
   data.forEach((employee) => {
     const statusData = calculateAttendanceStatus(
       employee.clockIn,
@@ -241,9 +239,8 @@ function convertDataToCSV(data) {
   return csv;
 }
 
-/**
- * تبدأ عملية تنزيل ملف CSV يحتوي على بيانات الحضور المفلترة.
- */
+//  تبدأ عملية تنزيل ملف CSV يحتوي على بيانات الحضور المفلترة.
+
 function exportTableToCSV(filename) {
   // إعادة تنفيذ منطق الفلترة للحصول على البيانات الحالية المعروضة
   const deptFilter = document.getElementById("dept-filter").value;
@@ -281,9 +278,7 @@ function exportTableToCSV(filename) {
   document.body.removeChild(link);
 }
 
-// ==========================================================
-// 6. ربط الأحداث
-// ==========================================================
+// ربط الأحداث
 document.addEventListener("DOMContentLoaded", () => {
   const deptFilter = document.getElementById("dept-filter");
   const statusFilter = document.getElementById("status-filter");
