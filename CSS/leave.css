@@ -114,29 +114,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
 }
-.search-box {
-  position: relative;
-  width: 250px;
-}
-.search-box input {
-  width: 100%;
-  padding: 8px 15px;
-  padding-left: 35px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background-color: var(--card-background);
-  color: var(--text-color);
-  text-align: right;
-}
-.search-box i {
-  position: absolute;
-  left: 10px;
-  right: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
+
 .theme-toggle-btn {
   background: none;
   border: none;
@@ -590,17 +568,10 @@ body.dark-mode .search-table-box input {
     overflow: visible;
   }
 
-  .search-box input {
-    height: 40px;
-  }
   .header-actions {
-    position: relative;
-    bottom: 80px;
     display: flex;
     align-items: center;
     justify-content: end;
-    width: 100%;
-    gap: 15px;
   }
 
   .logo {
@@ -615,12 +586,12 @@ body.dark-mode .search-table-box input {
     padding: 15px;
   }
   .top-header {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .search-box {
-    width: 100%;
+  .breadcrumbs {
+    display: none;
   }
 
   .leave-stats-grid {
@@ -645,6 +616,9 @@ body.dark-mode .search-table-box input {
     width: 100%;
     margin-right: 0;
   }
+  .top-card .card {
+    justify-content: space-around;
+  }
 }
 
 @media (max-width: 500px) {
@@ -659,4 +633,15 @@ body.dark-mode .search-table-box input {
   .actions .action-icon {
     margin-left: 10px;
   }
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.breadcrumbs a:hover {
+  color: var(--red);
+  text-decoration: underline;
 }

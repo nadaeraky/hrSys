@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>لوحة تحكم HRSync</title>
     <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/leave.css">
+    <link rel="stylesheet" href="CSS/leave.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -36,6 +36,8 @@
           <a href="leave.html"
             ><span>الإجازات</span><i class="fas fa-door-open"></i
           ></a>
+           <a href="attendance-details.html"
+            ><span>متابعة الحضور</span><i class="fa-solid fa-calendar-check"></i></a>
           <a href="setting.html"
             ><span>الإعدادات</span><i class="fas fa-cog"></i
           ></a>
@@ -45,13 +47,10 @@
       <main class="main-content">
         <header class="top-header">
           <div class="page-title-section">
-            <h1 class="page-title-name">الرئيسية</h1>
+            <h1 class="page-title-name">الصفحة الرئيسية</h1>
           </div>
 
-          <div class="search-box">
-            <input type="text" placeholder="أبحث هنا..." id="search-input" />
-            <i class="fas fa-search"></i>
-          </div>
+        
 
           <div class="header-actions">
             <button id="theme-toggle" class="theme-toggle-btn">
@@ -76,7 +75,7 @@
               <span class="count">50 / 120</span>
               <span class="title">أجمالي عدد الهيئة المعاونة </span>
             </div>
-            <div class="icon-box"><i class="fas fa-users"></i></div>
+            <div class="icon-box"><i class="fas fa-user"></i></div>
           </div>
 
           <div class="card card-on-leave">
@@ -95,12 +94,11 @@
             <div class="icon-box"><i class="fas fa-user-plus"></i></div>
           </div>
         </div>
-       <section class="dashboard-grid equal-height-grid">
+        <section class="dashboard-grid equal-height-grid">
           <div class="card employee-status">
             <h4>
               حالة الموظفين
               <select id="employee-status-filter">
-                <option value="all">كل السنوات</option>
                 <option value="2025">2025</option>
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
@@ -110,10 +108,14 @@
 
             <div class="status-content">
               <div class="total">إجمالي الموظفين <span>120</span></div>
-              <div class="status-list" id="employee-status-list">
-                </div>
+              <div class="status-list" id="employee-status-list"></div>
 
-              <button class="view-all-btn">عرض جميع الموظفين</button>
+              <button
+                class="view-all-btn"
+                onclick="window.location.href='employee.html';"
+              >
+                عرض جميع الموظفين
+              </button>
             </div>
           </div>
 
@@ -132,8 +134,7 @@
                 </option>
               </select>
             </h3>
-            <div class="clock-list" id="clock-list-container">
-              </div>
+            <div class="clock-list" id="clock-list-container"></div>
             <button
               class="view-all-btn"
               onclick="window.location.href='attendance-details.html';"
@@ -142,7 +143,7 @@
             </button>
           </div>
         </section>
-        </main>
+      </main>
     </div>
 
     <script src="JS/list.js"></script>

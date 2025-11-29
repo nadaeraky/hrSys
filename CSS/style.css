@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "Arial",
+    "Sans-serif";
+}
+
 :root {
   --primary-color: #5d50ff;
   --primary-hover: #4a3fea;
@@ -25,14 +33,6 @@ body.dark-mode {
   --sidebar-bg: #1c2130;
   --sidebar-text: #ffffff;
   --sidebar-active-bg: #272c44;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "Arial",
-    "Sans-serif";
 }
 
 body {

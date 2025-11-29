@@ -9,7 +9,7 @@
   --sidebar-bg: #1c2130;
   --sidebar-text: #ffffff;
   --sidebar-active-bg: #272c44;
-  --red: #f86f7f;
+  --red: #7a0f1b;
   --green: #48c9b0;
   --blue: #78b9b5;
   --yellow: #f4d03f;
@@ -217,7 +217,6 @@ body.dark-mode .view-toggle-btn {
   background-color: var(--sidebar-active-bg);
 }
 
-
 .modal {
   display: none;
   position: fixed;
@@ -342,9 +341,6 @@ body.dark-mode .employee-form select {
   color: var(--red);
 }
 
-
-
-
 /* responsive design */
 @media (max-width: 1200px) {
   .employee-grid {
@@ -380,10 +376,6 @@ body.dark-mode .employee-form select {
     flex-direction: column;
     align-items: flex-start;
   }
-  .search-box {
-    width: 100%;
-    margin-top: 15px;
-  }
 
   .logo {
     justify-content: space-between;
@@ -418,11 +410,7 @@ body.dark-mode .employee-form select {
     margin-bottom: 15px;
     font-size: 1.5rem;
   }
-  .search-box {
-    order: 3;
-    width: 100%;
-    margin: 10px 0;
-  }
+
   .header-profile {
     order: 2;
     width: auto;

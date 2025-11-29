@@ -10,6 +10,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
+  <style>
+    .header-actions {
+      gap: 20px;
+    }
+  </style>
 
   <body class="dark-mode">
     <div class="container">
@@ -44,13 +49,16 @@
       <main class="main-content">
         <header class="top-header">
           <div class="page-title-section">
-            <h1 class="page-title-name">الإجازات</h1>
+            <h1 class="page-title-name">الأجازات</h1>
+            <p class="breadcrumbs">
+              <a href="index.html">الرئيسية</a> / الأجازات
+            </p>
           </div>
 
-          <div class="search-box">
+          <!-- <div class="search-box">
             <input type="text" placeholder="أبحث هنا..." id="search-input" />
             <i class="fas fa-search"></i>
-          </div>
+          </div> -->
 
           <div class="header-actions">
             <button id="theme-toggle" class="theme-toggle-btn">
@@ -126,7 +134,7 @@
             <table class="leave-table">
               <thead>
                 <tr>
-                  <th><input type="checkbox" id="select-all" /></th>
+                  <th>#</th>
                   <th>الموظف</th>
                   <th>نوع الإجازة</th>
                   <th>تاريخ البدء</th>

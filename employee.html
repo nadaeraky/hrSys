@@ -16,7 +16,6 @@
     />
   </head>
   <body class="dark-mode">
-    
     <div class="container">
       <aside class="sidebar">
         <div class="logo">
@@ -25,10 +24,10 @@
         </div>
 
         <nav class="nav-links">
-          <a href="index.html"
+          <a href="index.html" 
             ><span>لوحة التحكم</span><i class="fas fa-th-large"></i
           ></a>
-          <a href="employee.html" class="active"
+          <a href="employee.html"class="active"
             ><span>أعضاء هيئة التدريس</span><i class="fas fa-users"></i
           ></a>
           <a href="moadien.html"
@@ -40,7 +39,12 @@
           <a href="leave.html"
             ><span>الإجازات</span><i class="fas fa-door-open"></i
           ></a>
-          <a href="#"><span>الإعدادات</span><i class="fas fa-cog"></i></a>
+          <a href="attendance-details.html"
+            ><span>متابعة الحضور</span><i class="fa-solid fa-calendar-check"></i
+          ></a>
+          <a href="setting.html"
+            ><span>الإعدادات</span><i class="fas fa-cog"></i
+          ></a>
         </nav>
       </aside>
 
@@ -48,11 +52,9 @@
         <header class="top-header">
           <div class="page-title-section">
             <h1 class="page-title-name">أعضاء هيئة التدريس</h1>
-          </div>
-
-          <div class="search-box">
-            <input type="text" placeholder="أبحث هنا..." id="search-input" />
-            <i class="fas fa-search"></i>
+            <p class="breadcrumbs">
+              <a href="employee.html">الرئيسية</a> / هيئة التدريس
+            </p>
           </div>
 
           <div class="header-actions">
@@ -527,7 +529,6 @@
           </div>
         </section>
       </main>
-
     </div>
     <!-- add an employee -->
     <div id="add-employee-modal" class="modal">
