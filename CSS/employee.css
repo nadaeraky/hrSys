@@ -355,6 +355,7 @@ body.dark-mode .employee-form select {
   .top-header {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
   }
 
   .logo {

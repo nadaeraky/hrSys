@@ -572,6 +572,7 @@ body.dark-mode .search-table-box input {
     display: flex;
     align-items: center;
     justify-content: end;
+    gap: 15px;
   }
 
   .logo {
