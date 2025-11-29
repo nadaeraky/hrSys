@@ -5,9 +5,6 @@ const form = document.getElementById("add-employee-form");
 const employeeGrid = document.querySelector(".employee-grid");
 const designationFilter = document.getElementById("designation-filter");
 
-
-
-
 // filter employee
 function filterEmployeesByDesignation() {
   const selectedDesignation = designationFilter.value;
@@ -28,9 +25,6 @@ function filterEmployeesByDesignation() {
 // عند حدوث اي تغير من اليوزر استدعي دالة الفلتر
 designationFilter.addEventListener("change", filterEmployeesByDesignation);
 
-
-
-
 // delete button
 function addDeleteListener(cardElement) {
   const deleteBtn = cardElement.querySelector(".delete-employee-btn");
@@ -46,9 +40,6 @@ document.querySelectorAll(".employee-card").forEach((card) => {
   addDeleteListener(card);
 });
 
-
-
-
 // اظهار نافدة أضافة موظف
 btn.onclick = function () {
   modal.style.display = "flex";
@@ -63,8 +54,6 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-
-
 
 function createEmployeeCard(name, role, email, phone, imageSrc) {
   const card = document.createElement("div");
@@ -97,8 +86,6 @@ function createEmployeeCard(name, role, email, phone, imageSrc) {
   return card;
 }
 
-
-
 form.onsubmit = function (event) {
   // منع اعادة تحميل الصفحة
   event.preventDefault();
@@ -116,7 +103,7 @@ form.onsubmit = function (event) {
     phone,
     image
   );
-// أضافه الكارد اول واحدة
+  // أضافه الكارد اول واحدة
   employeeGrid.prepend(newEmployeeCard);
 
   addDeleteListener(newEmployeeCard);
