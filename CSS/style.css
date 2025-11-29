@@ -414,8 +414,8 @@ body.dark-mode .card select {
   text-align: right;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: row-reverse;
-  justify-content: flex-end;
   padding: 10px 0;
   border-bottom: 1px solid var(--border-color);
   transition: border-color var(--transition-speed);
@@ -439,7 +439,6 @@ body.dark-mode .card select {
   border-radius: 5px;
   font-size: 0.8rem;
   font-weight: bold;
-  margin-inline-start: auto;
   color: white;
   min-width: 55px;
   text-align: center;

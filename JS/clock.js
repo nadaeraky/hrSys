@@ -118,17 +118,17 @@ const employeesStatusData = [
   { type: "أعضاء هيئة التدريس", count: 47, percentage: 42, joinYear: 2025 },
   { type: "الأداريين", count: 15, percentage: 15, joinYear: 2025 },
   { type: "أعضاء هيئة معاونة", count: 20, percentage: 20, joinYear: 2025 },
-  { type: " تحت تاتدريب ", count: 10, percentage: 10, joinYear: 2025 },
+  { type: " تحت التدريب ", count: 10, percentage: 10, joinYear: 2025 },
 
   { type: "أعضاء هيئة التدريس", count: 50, percentage: 50, joinYear: 2024 },
   { type: "الأداريين", count: 15, percentage: 15, joinYear: 2024 },
   { type: "أعضاء هيئة معاونة", count: 30, percentage: 30, joinYear: 2024 },
-  { type: " تحت تاتدريب ", count: 5, percentage: 5, joinYear: 2024 },
+  { type: " تحت التدريب ", count: 5, percentage: 5, joinYear: 2024 },
 
   { type: "أعضاء هيئة التدريس", count: 65, percentage: 65, joinYear: 2023 },
   { type: "الأداريين", count: 25, percentage: 25, joinYear: 2023 },
   { type: "أعضاء هيئة معاونة", count: 10, percentage: 10, joinYear: 2023 },
-  { type: " تحت تاتدريب ", count: 0, percentage: 0, joinYear: 2023 },
+  { type: " تحت التدريب ", count: 0, percentage: 0, joinYear: 2023 },
 ];
 
 /**
